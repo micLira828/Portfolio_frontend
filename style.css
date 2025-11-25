@@ -1,4 +1,9 @@
 /* Global Styles */
+
+:root {
+  --gold: #d9c386;
+} 
+
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -31,7 +36,7 @@ button:hover {
 /* Navigation */
 header {
   background-color: #2b4d3c; /* forest green */
-  color: #fff;
+  color: var(--gold);
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
@@ -68,7 +73,7 @@ nav a:hover {
   background-image: url('your-animated-background.gif'); /* optional festive background */
   background-size: cover;
   background-position: center;
-  color: #fff;
+  color: var(--gold);
 }
 
 #home h2 {
