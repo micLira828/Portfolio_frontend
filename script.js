@@ -40,8 +40,9 @@ projects.forEach(project => {
   card.className = "project-card";
 
   card.innerHTML = `
+  <img src="${project.image}" alt="${project.title} screenshot">
   <div class = "project-content">
-    <img src="${project.image}" alt="${project.title} screenshot">
+  
     <h3>${project.title}</h3>
     <p>${project.description}</p>
     <p><strong>Tech:</strong> ${project.tech.join(", ")}</p>
