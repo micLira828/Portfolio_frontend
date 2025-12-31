@@ -40,11 +40,13 @@ projects.forEach(project => {
   card.className = "project-card";
 
   card.innerHTML = `
+  <div class = "project-content">
     <img src="${project.image}" alt="${project.title} screenshot">
     <h3>${project.title}</h3>
     <p>${project.description}</p>
     <p><strong>Tech:</strong> ${project.tech.join(", ")}</p>
     <a href="${project.link}" target="_blank">View Project</a>
+   </div>
   `;
   projectsContainer.appendChild(card);
 });
@@ -76,10 +78,12 @@ function renderNutshell(items) {
   items.forEach(item => {
     const card = document.createElement("div");
     card.className = "service-card";
-
+    
     card.innerHTML = `
+    <div class = "service-content">
       <h3>${item.title}</h3>
       <p>${item.description}</p>
+    </div>
     `;
 
     container.appendChild(card);
