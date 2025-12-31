@@ -1,3 +1,20 @@
+const projects = [
+  {
+    title: "Identi Landing Page",
+    description: "Brand-forward landing page for a creative identity studio.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    image: "assets/projects/identi.png",
+    link: "https://miclira828.github.io/IdentiLandingPage/#links"
+  },
+  {
+    title: "Marketing Page",
+    description: "Clean, conversion-focused marketing site.",
+    tech: ["HTML", "CSS"],
+    image: "assets/projects/marketing_page.png",
+    link: "https://miclira828.github.io/Marketing-Page/"
+  },
+];
+
 const fallbackNutshell = [
   {
     title: "API-Driven Design",
@@ -12,6 +29,25 @@ const fallbackNutshell = [
     description: "My work degrades gracefully when services are unavailable."
   }
 ];
+
+
+
+
+const projectsContainer = document.getElementById("projects-grid");
+
+projects.forEach(project => {
+  const card = document.createElement("div");
+  card.className = "project-card";
+
+  card.innerHTML = `
+    <img src="${project.image}" alt="${project.title} screenshot">
+    <h3>${project.title}</h3>
+    <p>${project.description}</p>
+    <p><strong>Tech:</strong> ${project.tech.join(", ")}</p>
+    <a href="${project.link}" target="_blank">View Project</a>
+  `;
+  projectsContainer.appendChild(card);
+});
 
 async function loadNutshell() {
   const container = document.getElementById("nutshell-cards");
@@ -39,7 +75,7 @@ function renderNutshell(items) {
 
   items.forEach(item => {
     const card = document.createElement("div");
-    card.className = "card";
+    card.className = "service-card";
 
     card.innerHTML = `
       <h3>${item.title}</h3>
