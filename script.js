@@ -56,7 +56,7 @@ async function loadNutshell() {
   const container = document.getElementById("nutshell-cards");
 
   try {
-    const res = await fetch("http://localhost:5000/api/nutshell");
+    const res = await fetch("http://127.0.0.1:5000/api/nutshell/");
 
     if (!res.ok) {
       throw new Error("API failed");
@@ -83,7 +83,7 @@ function renderNutshell(items) {
     card.innerHTML = `
     <div class = "service-content">
       <h3>${item.title}</h3>
-      <p>${item.description}</p>
+      <p>${item.content}</p>
     </div>
     `;
 
@@ -109,7 +109,7 @@ message: form.message.value
 };
 
 try {
-const res = await fetch("/api/messages", {
+const res = await fetch("http://127.0.0.1:5000/api/messages/", {
 method: "POST",
 headers: { "Content-Type": "application/json" },
 body: JSON.stringify(data)
