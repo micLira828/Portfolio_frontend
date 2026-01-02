@@ -173,6 +173,44 @@ CONTACT (placeholder)
 text-align: center;
 }
 
+#contact {
+max-width: 700px;
+margin: 4rem auto;
+padding: 3rem;
+}
+
+#contact form {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+
+#contact input,
+#contact textarea {
+padding: 0.75rem 1rem;
+border-radius: 8px;
+border: 1px solid #ddd;
+font-size: 1rem;
+}
+
+#contact button {
+padding: 0.75rem 1.25rem;
+border-radius: 999px;
+border: none;
+cursor: pointer;
+}
+
+.secondary-cta {
+margin-top: 1.5rem;
+font-size: 0.9rem;
+color: var(--text-secondary);
+}
+
+.secondary-cta a {
+margin: 0 0.25rem;
+text-decoration: underline;
+}
+
 /* =========================
 RESPONSIVE
 ========================= */
