@@ -1,8 +1,8 @@
-root {
+:root {
 --bg-gradient: linear-gradient(
 180deg,
-#f6f2ff 0%,
-#fdfcff 60%,
+#ede6ff 0%,
+#f6f2ff 45%,
 #ffffff 100%
 );
 
@@ -19,12 +19,35 @@ root {
 /* =========================
 BASE
 ========================= */
+
+Michelle Gepshtein <plantseedsmic1345@gmail.com>
+10:44 PM (0 minutes ago)
+to me
+
+html, body{
+  min-height: 100%;
+}
+
+html{
+ /* Soft magical gradient */
+background: var(--bg-gradient);
+}
+
 body {
+background: transparent;
 margin: 0;
 font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-background: var(--bg-gradient);
-color: var(--text-primary);
-line-height: 1.6;
+
+
+
+}
+
+h1, h2, h3 {
+color: #2f2a45;
+}
+
+p {
+color: #5f5a7a;
 }
 
 /* =========================
@@ -52,8 +75,11 @@ section {
 max-width: 1100px;
 margin: 4rem auto;
 padding: 3rem;
-background: var(--section-bg);
-border-radius: var(--radius);
+
+background: rgba(255, 255, 255, 0.7);
+backdrop-filter: blur(6px);
+
+border-radius: 16px;
 }
 
 section h2 {
@@ -81,14 +107,14 @@ padding-top: 1rem;
 /* =========================
 PROJECT CARD
 ========================= */
-.project-card, .service-content {
+.project-card, .service-card {
 display: flex;
 flex-direction: column;
-background: var(--card-bg);
-border-radius: var(--radius);
-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 overflow: hidden;
 transition: transform 0.2s ease, box-shadow 0.2s ease;
+background: var(--card-bg);
+border-radius: var(--radius);
+box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 .project-card:hover, .service-content:hover {
@@ -210,6 +236,8 @@ color: var(--text-secondary);
 margin: 0 0.25rem;
 text-decoration: underline;
 }
+
+
 
 /* =========================
 RESPONSIVE
