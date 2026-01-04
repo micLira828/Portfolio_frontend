@@ -1,3 +1,5 @@
+const API_BASE_URL = "https://portfolio-in-flask.onrender.com";
+
 const projects = [
   {
     title: "Identi Landing Page",
@@ -35,28 +37,34 @@ const fallbackNutshell = [
 
 const projectsContainer = document.getElementById("projects-grid");
 
+fetch(`${API_BASE_URL}/api/projects`)
+.then(res => res.json())
+.then(projects => {
 projects.forEach(project => {
-  const card = document.createElement("div");
-  card.className = "project-card";
+const card = document.createElement("div");
+card.className = "project-card";
 
-  card.innerHTML = `
-  <img src="${project.image}" alt="${project.title} screenshot">
-  <div class = "project-content">
-  
-    <h3>${project.title}</h3>
-    <p>${project.description}</p>
-    <p><strong>Tech:</strong> ${project.tech.join(", ")}</p>
-    <a href="${project.link}" target="_blank">View Project</a>
-   </div>
-  `;
-  projectsContainer.appendChild(card);
+card.innerHTML = `
+<img src="${project.image_url || './assets/projects/marketing_page.png'}" alt="${project.title} screenshot">
+<div class="project-content">
+<h3>${project.title}</h3>
+<p>${project.description}</p>
+<a href="${project.live_url}" target="_blank">View Project</a>
+</div>
+`;
+
+projectsContainer.appendChild(card);
+});
+})
+.catch(err => {
+console.error("Failed to load projects:", err);
 });
 
 async function loadNutshell() {
   const container = document.getElementById("nutshell-cards");
 
   try {
-    const res = await fetch("http://127.0.0.1:5000/api/nutshell/");
+    const res = await fetch(`${API_BASE_URL }/api/nutshell/`);
 
     if (!res.ok) {
       throw new Error("API failed");
@@ -109,7 +117,7 @@ message: form.message.value
 };
 
 try {
-const res = await fetch("http://127.0.0.1:5000/api/messages/", {
+const res = await fetch(`${API_BASE_URL }/api/messages/`, {
 method: "POST",
 headers: { "Content-Type": "application/json" },
 body: JSON.stringify(data)
@@ -118,6 +126,7 @@ body: JSON.stringify(data)
 if (!res.ok) throw new Error("Failed");
 
 status.textContent = "Thanks! I’ll get back to you soon.";
+console.log("Form submitted! Thank you!");
 form.reset();
 } catch {
 status.textContent = "Something went wrong. Please try again later.";
