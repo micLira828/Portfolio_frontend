@@ -107,6 +107,8 @@ document.addEventListener("DOMContentLoaded", () => {
 document.getElementById("contact-form").addEventListener("submit", async (e) => {
 e.preventDefault();
 
+alert("Submit fired!");
+
 const form = e.target;
 const status = document.getElementById("form-status");
 
