@@ -45,7 +45,7 @@ const card = document.createElement("div");
 card.className = "project-card";
 
 card.innerHTML = `
-<img src="${project.image_url || './assets/projects/marketing_page.png'}" alt="${project.title} screenshot">
+<img src="${project.image_url || 'assets/projects/marketing_page.png'}" alt="${project.title} screenshot">
 <div class="project-content">
 <h3>${project.title}</h3>
 <p>${project.description}</p>
