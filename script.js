@@ -117,7 +117,7 @@ message: form.message.value
 };
 
 try {
-const res = await fetch(`${API_BASE_URL }/api/messages/`, {
+const res = await fetch(`${API_BASE_URL }/api/messages`, {
 method: "POST",
 headers: { "Content-Type": "application/json" },
 body: JSON.stringify(data)
